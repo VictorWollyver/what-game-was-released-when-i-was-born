@@ -4,6 +4,8 @@ import "./globals.css";
 
 const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
+	style: "normal",
+	weight: ["400", "600", "700"],
 	subsets: ["latin"],
 });
 
@@ -23,7 +25,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt-BR">
-			<body className={` ${geistMono.variable} antialiased`}>{children}</body>
+			<body className={`${geistMono.variable} antialiased`}>
+				<section className="grid items-center justify-items-center grid-cols-[1fr] h-[100vh]">
+					{children}
+				</section>
+			</body>
 		</html>
 	);
 }
